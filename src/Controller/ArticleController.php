@@ -7,6 +7,7 @@ use Symfony\Component\HttpFoundation\Response;
 
 class ArticleController
 {
+    
     /**
      * @Route("/")
      */
@@ -14,6 +15,7 @@ class ArticleController
     {
     return new Response ('My first page');
     }
+
     /**
      * @Route("/news/{slug}")
      */
