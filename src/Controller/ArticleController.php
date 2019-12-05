@@ -9,21 +9,20 @@ use Symfony\Component\HttpFoundation\Response;
 
 class ArticleController extends AbstractController
 {
-    
+
+
     /**
-     * @Route("/")
+     * @Route("/home/")
      */
-    public function homepage()
-    {
-    return new Response ('My first page');
+    public function show(){
+        return $this->render('article/show.html.twig');
     }
 
     /**
-     * @Route("/news/{slug}")
+     * @Route("/tweede/")
      */
-    public function show($slug){
-        return $this->render('article/show.html.twig', [
-            'title' => ucwords(str_replace('-', ' ', $slug)),
-            ]);
+    public function show2(){
+        return $this->render('base.html.twig');
     }
+
 }
