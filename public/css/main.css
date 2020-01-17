@@ -1,3 +1,5 @@
-body{
-        background-image: url("public/img/background.jpg");
+.card-body{
+        float: left;
+
+
 }
