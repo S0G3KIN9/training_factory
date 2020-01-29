@@ -25,4 +25,25 @@ class ArticleController extends AbstractController
         return $this->render('base.html.twig');
     }
 
+    /**
+     * @Route("bezoeker/regelpagina/", name="regels")
+     */
+    public function show3(){
+        return $this->render('bezoeker/regels.html.twig');
+    }
+
+    /**
+     * @Route("bezoeker/contactpagina/", name="contact")
+     */
+    public function show4(){
+        return $this->render('bezoeker/contact.html.twig');
+    }
+
+    /**
+     * @Route("bezoeker/aanbodpagina/", name="les")
+     */
+    public function show5(){
+        return $this->render('bezoeker/aanbod.html.twig');
+    }
+
 }

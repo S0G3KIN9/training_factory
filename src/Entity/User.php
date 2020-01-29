@@ -20,9 +20,29 @@ class User implements UserInterface
     private $id;
 
     /**
+     * @ORM\Column(type="string", length=180,)
+     */
+    private $firstname;
+
+    /**
+     * @ORM\Column(type="string", length=180,)
+     */
+    private $preprovision;
+
+    /**
+     * @ORM\Column(type="string", length=180,)
+     */
+    private $lastname;
+
+    /**
      * @ORM\Column(type="string", length=180, unique=true)
      */
     private $email;
+
+    /**
+     * @ORM\Column(type="date")
+     */
+    private $dateofbirth;
 
     /**
      * @ORM\Column(type="json")
@@ -38,6 +58,54 @@ class User implements UserInterface
     public function getId(): ?int
     {
         return $this->id;
+    }
+
+    public function getfirstname(): ?string
+    {
+        return $this->firstname;
+    }
+
+    public function setfirstname(string $firstname): self
+    {
+        $this->firstname = $firstname;
+
+        return $this;
+    }
+
+    public function getpreprovision(): ?string
+    {
+        return $this->preprovision;
+    }
+
+    public function setpreprovision(string $preprovision): self
+    {
+        $this->preprovision = $preprovision;
+
+        return $this;
+    }
+
+    public function getlastname(): ?string
+    {
+        return $this->lastname;
+    }
+
+    public function setlastname(string $lastname): self
+    {
+        $this->lastname = $lastname;
+
+        return $this;
+    }
+
+    public function getdateofbirth()
+    {
+        return $this->dateofbirth;
+    }
+
+    public function setdateofbirth($dateofbirth): self
+    {
+        $this->dateofbirth = $dateofbirth;
+
+        return $this;
     }
 
     public function getEmail(): ?string
