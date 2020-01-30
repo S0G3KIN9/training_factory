@@ -1,0 +1,50 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Instructor index{% endblock %}
+
+{% block body %}
+    <h1>Instructor index</h1>
+
+    <table class="table" style="width: 50%; margin: auto; background-color: rgba(179, 159, 132, 0.7); ">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Loginname</th>
+                <th>Password</th>
+                <th>Firstname</th>
+                <th>Lastname</th>
+                <th>Dateofbirth</th>
+                <th>Emailaddress</th>
+                <th>Hiring_date</th>
+                <th>Salary</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for instructor in instructors %}
+            <tr>
+                <td>{{ instructor.id }}</td>
+                <td>{{ instructor.loginname }}</td>
+                <td>{{ instructor.password }}</td>
+                <td>{{ instructor.firstname }}</td>
+                <td>{{ instructor.lastname }}</td>
+                <td>{{ instructor.dateofbirth ? instructor.dateofbirth|date('Y-m-d') : '' }}</td>
+                <td>{{ instructor.emailaddress }}</td>
+                <td>{{ instructor.hiringDate ? instructor.hiringDate|date('Y-m-d') : '' }}</td>
+                <td>{{ instructor.salary }}</td>
+                <td>
+                    <a href="{{ path('instructor_show', {'id': instructor.id}) }}"style="color: whitesmoke;">show</a>
+                    <a href="{{ path('instructor_edit', {'id': instructor.id}) }}"style="color: whitesmoke;">edit</a>
+                    <a href="{{ path('instructor_new') }}"style="color: whitesmoke;">Create new</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="10">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+
+{% endblock %}

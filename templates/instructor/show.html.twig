@@ -1,0 +1,54 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Instructor{% endblock %}
+
+{% block body %}
+    <h1>Instructor</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ instructor.id }}</td>
+            </tr>
+            <tr>
+                <th>Loginname</th>
+                <td>{{ instructor.loginname }}</td>
+            </tr>
+            <tr>
+                <th>Password</th>
+                <td>{{ instructor.password }}</td>
+            </tr>
+            <tr>
+                <th>Firstname</th>
+                <td>{{ instructor.firstname }}</td>
+            </tr>
+            <tr>
+                <th>Lastname</th>
+                <td>{{ instructor.lastname }}</td>
+            </tr>
+            <tr>
+                <th>Dateofbirth</th>
+                <td>{{ instructor.dateofbirth ? instructor.dateofbirth|date('Y-m-d') : '' }}</td>
+            </tr>
+            <tr>
+                <th>Emailaddress</th>
+                <td>{{ instructor.emailaddress }}</td>
+            </tr>
+            <tr>
+                <th>Hiring_date</th>
+                <td>{{ instructor.hiringDate ? instructor.hiringDate|date('Y-m-d') : '' }}</td>
+            </tr>
+            <tr>
+                <th>Salary</th>
+                <td>{{ instructor.salary }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('instructor_index') }}">back to list</a>
+
+    <a href="{{ path('instructor_edit', {'id': instructor.id}) }}">edit</a>
+
+    {{ include('instructor/_delete_form.html.twig') }}
+{% endblock %}
